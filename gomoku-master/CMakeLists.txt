@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.5)
+project(pbrain-gomoku_blanchard_theis.exe)
+
+# Enable C++ 11
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+# Include header directories
+include_directories("include")
+
+# Add source files
+file(GLOB_RECURSE SRC "src/*.cpp")
+file(GLOB_RECURSE SRC_TEST "tests/*.cpp")
+
+# Set default build type to Release
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif(NOT CMAKE_BUILD_TYPE)
+
+# Main executable
+add_executable(pbrain-gomoku_blanchard_theis.exe ${SRC})
+
+install(TARGETS pbrain-gomoku_blanchard_theis.exe DESTINATION bin)
